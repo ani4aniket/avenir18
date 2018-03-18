@@ -2,6 +2,31 @@ var portNames = ["coding", "robotics", "photography", "fun", "home", "about", "c
 
 $(function() {
 
+    var nowSlide = 5;
+
+    function slide(x) {
+        //alert("hello");
+        y = nowSlide;
+
+        if (x != y) {
+            if (y > 0) {
+                //$('#slide'+y).hide().removeClass('animated fadeInRight').addClass('animated fadeOutLeft');
+                $('#menu' + y).removeClass('activeMenu');
+            }
+            //$('#slide'+x).show().removeClass('animated fadeOutLeft ').addClass('animated fadeInRight');
+            $('#menu' + x).addClass('activeMenu');
+
+            coverFlow.flipster('jump', x);
+
+            nowSlide = x;
+
+            var port = portNames[x];
+
+            window.location.hash = port;
+
+        }
+    }
+
     var coverFlow = $('#main').flipster();
 
     var accessToken = "d40080bd35ab41c9aa69f14baa45f5a1";
@@ -71,6 +96,16 @@ $(function() {
                 }
             });
 
+            annyang.abort();
+
+
+        });
+
+
+        annyang.addCallback('resultMatch', function(userSaid, commandText, phrases) {
+
+
+            annyang.abort();
 
         });
 
@@ -82,6 +117,9 @@ $(function() {
 
         // Define a stylesheet for KITT to use
         SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/1.0.0/themes/flat.css');
+
+        SpeechKITT.rememberStatus(1);
+
 
         // Render KITT's interface
         SpeechKITT.vroom();
@@ -111,32 +149,6 @@ $(function() {
         slide(8);
     } else {
         slide(4);
-    }
-
-
-    var nowSlide = 5;
-
-    function slide(x) {
-        //alert("hello");
-        y = nowSlide;
-
-        if (x != y) {
-            if (y > 0) {
-                //$('#slide'+y).hide().removeClass('animated fadeInRight').addClass('animated fadeOutLeft');
-                $('#menu' + y).removeClass('activeMenu');
-            }
-            //$('#slide'+x).show().removeClass('animated fadeOutLeft ').addClass('animated fadeInRight');
-            $('#menu' + x).addClass('activeMenu');
-
-            coverFlow.flipster('jump', x);
-
-            nowSlide = x;
-
-            var port = portNames[x];
-
-            window.location.hash = port;
-
-        }
     }
 
 });
