@@ -3,6 +3,7 @@ body {
     overflow-x: hidden;
     background-attachment: fixed;
 }
+
 body,
 html { height: 100%;}
 .nav .open > a, 
@@ -315,6 +316,9 @@ figure.snip0057 * {
   -webkit-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
 }
+.control-label{
+  color: black;
+}
 figure.snip0057 .image {
   width: 50%;
   overflow: hidden;
@@ -519,4 +523,7 @@ div.canvas-content{
     color:#fff;
     text-align:center;
     padding-top:30px;
+}
+#backk>li>a:hover{
+  background-color: transparent;
 }
