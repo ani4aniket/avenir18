@@ -345,6 +345,7 @@ figure.snip0057:before {
   -webkit-box-shadow: 15px 0px 25px rgba(0, 0, 0, 0.7);
   box-shadow: 15px 0px 25px rgba(0, 0, 0, 0.7);
 }
+
 figure.snip0057 figcaption {
   padding: 20px 30px 20px 20px;
   position: absolute;
@@ -526,4 +527,27 @@ div.canvas-content{
 }
 #backk>li>a:hover{
   background-color: transparent;
+}
+figure.snip0058 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 30px 2%;
+  min-width: 380px;
+  max-width: 480px;
+  width: 100%;
+  background: transparent;
+  color: #000000;
+}
+
+
+figure.snip0058:before {
+  position: absolute;
+  content: '';
+  height: 100%;
+  -webkit-transform: skewX(-17deg);
+  transform: skewX(-17deg);
+  -webkit-box-shadow: 15px 0px 25px rgba(0, 0, 0, 0.7);
+  box-shadow: 15px 0px 25px rgba(0, 0, 0, 0.7);
 }

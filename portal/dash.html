@@ -156,12 +156,35 @@
         			</div>
   				</div>
 				</figure>
+        <figure class="snip0058">
+          <h3 style="color: white;">Show the QR code and pay the registration amount in our college (Phoenix- Tech Club).</h3>
+          <a href="javascript:qrc()"><button type="button" class="btn btn-primary">Click to generate QR</button></a>
+        </figure>
             </div>
             
+        
         </div>
         <!-- /#page-content-wrapper -->
-
+        
     </div>
+    <script type="text/javascript"> 
+  function makeid() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 6; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+  }
+
+var captcha=makeid();
+function qrc(){
+  var x= window.location.href="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl="+captcha+"&choe=UTF-8";
+  return x;
+}
+
+</script>
     <!-- Main library -->
         <script src="../assets/js/three.min.js"></script>
       
