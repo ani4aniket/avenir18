@@ -48,7 +48,7 @@
 						</div>
 					
 					</div>
-					<form class="form-horizontal" id="register-form" method="post" action="./dashboard.php">
+					<form class="form-horizontal" id="register-form" method="post" action="register.do.php">
 						
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">Name</label>
@@ -91,14 +91,14 @@
 						</div>
 
 						<div class="form-group">
-							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
-								</div>
-							</div>
-						</div>
+                            <label for="confirm-password" class="cols-sm-2 control-label">Confirm Password</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                    <input type="password" class="form-control" name="confirm" id="confirmPassword"  placeholder="Re-enter your Password"/>
+                                </div>
+                            </div>
+                        </div></br>
 
 						<div class="form-group ">
 							<input type="submit" value="Register" class="btn btn-primary btn-lg btn-block login-button"></input>
@@ -136,6 +136,61 @@
 					</form>
 			</div>
 	</div>
+	</br>
+   <?php
+    $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    
+    if(strpos($fullUrl,"signup=empty")){  ?>
+        <div class="alert alert-warning alert-dismissible">
+                <strong>Fileds are not set</strong> 
+            </div>
+            <?php
+            exit();
+    }
+
+    elseif(strpos($fullUrl,"err=1")==true){  ?>
+        <div class="alert alert-warning alert-dismissible">
+                <strong>Not a Valid email</strong> 
+            </div>
+            <?php
+            exit();
+    }
+
+    elseif(strpos($fullUrl,"err=3")==true){ ?>
+        <div class="alert alert-warning alert-dismissible">
+                <strong>User email Exists</strong> 
+        </div>
+            <?php
+            exit();
+    }
+
+    elseif(strpos($fullUrl,"err=4")==true){ ?>
+        <div class="alert alert-warning alert-dismissible">
+                <strong>Error: Try again later</strong> 
+         </div>
+            <?php
+            exit();
+    }
+
+    elseif(strpos($fullUrl,"err=5")==true){ ?>
+        <div class="alert alert-warning alert-dismissible">
+                <strong>Username exists</strong> 
+        </div>
+            <?php
+            exit();
+    }
+
+    elseif(strpos($fullUrl,"err=7")==true){ ?>
+        <div class="alert alert-warning alert-dismissible">
+                <strong>Password do not match</strong> 
+        </div>
+            <?php
+            exit();    
+
+    }
+
+
+   ?>
 </div>
 <script type="text/javascript" src="../assets/js/login.js"></script>
 

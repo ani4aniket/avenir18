@@ -25,35 +25,35 @@ function sec_session_start() {
     session_regenerate_id();    // regenerated the session, delete the old one.
 }
 
-function login($email, $password, $mysqli, $type=2) {
+function login($username, $password1, $mysqli, $type=2) {
 
     $table = "students";
     $tableConstraint = "";
 
-    if($type==1){
-        $table="admins";
-    }
+    #if($type==1){
+     #   $table="admins";
+    #}
 
 
     // Using prepared statements means that SQL injection is not possible.
     if ($stmt = $mysqli->prepare("SELECT id, username, password, salt
-                  FROM ".$table." WHERE ".$tableConstraint." username = ? OR email= ? LIMIT 1")) {
-        $stmt->bind_param('ss', $email, $email);  // Bind "$email" to parameter.
+                  FROM ".$table." WHERE ".$tableConstraint." username = ?  LIMIT 1")) {
+        $stmt->bind_param('s', $username);  // Bind "$username" to parameter.
         $stmt->execute();    // Execute the prepared query.
         $stmt->store_result();
 
         // get variables from result.
-        $stmt->bind_result($user_id, $username, $db_password, $salt);
+        $stmt->bind_result($id, $username, $password, $salt);
         $stmt->fetch();
 
-        echo $db_password;
+      //  echo $db_password;
 
         // hash the password with the unique salt.
-        $password = hash('sha512', $password . $salt);
+        $password1 = hash('sha512', $password1 . $salt);
         if ($stmt->num_rows == 1) {
             // Check if the password in the database matches
             // the password the user submitted.
-            if ($db_password == $password) {
+            if ($password == $password1) {
                 // Password is correct!
                 // Get the user-agent string of the user.
                 $user_browser = $_SERVER['HTTP_USER_AGENT'];
@@ -66,13 +66,14 @@ function login($email, $password, $mysqli, $type=2) {
                 $username = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $username);
 
                 $_SESSION['username'] = $username;
-                $_SESSION['login_string'] = hash('sha512', $password . $user_browser);
+                $_SESSION['login_string'] = hash('sha512', $password1 . $user_browser);
                 $_SESSION['login_type'] = $type;
+                login_check($stmt,2);
 
                 // Login successful.
                 return true;
             } else {
-                echo $db_password." != ".$password;
+                echo $password." != ".$password1;
                 return false;
             }
         } else {
@@ -199,5 +200,5 @@ function esc_url($url) {
 }
 
 
-?>
+
 
