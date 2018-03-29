@@ -1,9 +1,32 @@
-/*body {
-    background-color: black;
-}*/
+body {
+    background: url('https://www.wallpaperup.com/uploads/wallpapers/2013/12/16/196979/dbe3b4ba9359b0daea07c5bae2da8f0f-700.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    display: flex;
 
+    background-repeat: repeat;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.blackdiv:after {
+    z-index: 10;
+    content: '\A';
+    position: absolute;
+    width: 100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.9);
+    height:0;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+    -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+}
+.blackdiv:hover:after {
+    height: 15%;
+}
 .navbar{
     border-radius: 0px !important;
+    z-index: 999;
 }
 
 .iconmelon,
@@ -32,7 +55,7 @@
         display: block;
         width: 160px;
         text-align: center;
-        background-color: #eee;
+        background-color: black;
     }
     .navbar>.container .navbar-brand-centered,
     .navbar>.container-fluid .navbar-brand-centered {
@@ -50,7 +73,7 @@
         margin-right: auto;
 }
 .navbar-collapse .nav>li>a {
-    color: black;
+    color: white;
     font-style: underline;
 }
 
@@ -73,7 +96,7 @@ header:hover+nav-dropdown {
 }
 
 .nav-dropdown {
-    z-index: -1;
+    z-index: 999;
     background-color: black;
 }
 
@@ -92,9 +115,21 @@ header:hover+nav-dropdown {
     left: 0;
     overflow: hidden;
     position: fixed;
+    flex-grow: 2;
 }
 
-
+#cybernix{
+    background-image: url(../img/cybernix.jpg);
+     background-size: cover;
+}
+#lensified{
+    background-image: url(../img/lensified.jpg);
+    background-size: cover;
+}
+#robonix{
+    background-image: url(../img/robonix.jpg);
+    background-size: cover;
+}
 .tpanel {
     height: 80vh;
     width: 50vw;
@@ -107,11 +142,12 @@ header:hover+nav-dropdown {
 .tpanel-register{
     background: rgba(255, 255, 255, 0.9);
 }
-
 .tpanel-head {
+    font-family: 'Limelight', cursive;
     padding: 3%;
-    border-bottom: 3px solid #cdcdcd;
-    font-size: 2rem;
+    /*border-bottom: 3px solid #cdcdcd;*/
+    font-size: 3rem;
+    color: black;
 }
 
 .tpanel-foot{
@@ -122,37 +158,23 @@ header:hover+nav-dropdown {
     width: 100%;
     text-align: right;
 }
-#canvas{
-   width:100%;
-  height:700px;
-  overflow: hidden;
-  position:fixed;
-  top:0;
-  left:0;
-  background-color: #1a1724;               
-  }
-.canvas-wrap{
- position:relative;
-  }
-div.canvas-content{
-    position:relative;
-    z-index:2000;
-    color:#fff;
-    text-align:center;
-    padding-top:30px;
+.tpanel-foot a{
+    color: darkblue;
 }
-footer {
-    background-color: rgba(44, 62, 80, 1.0);
 
+footer {
+    background-color: black;
+    z-index: 10;
     width: 100%;
     bottom: 0;
     font-weight: lighter;
-    color: white;
+    color: #8a0b0b;
+    margin-top: 900px;
 }
 .footerHeader{
     width:100%;
     padding:1em;
-    background-color:rgba(52, 73, 94,1.0);
+    /*background-color:rgba(52, 73, 94,1.0);*/
     text-align:center;
     color:white;
 }
@@ -186,6 +208,7 @@ footer iframe {
 }
 
 
+
 /*==================================================
 =            Bootstrap 3 Media Queries             =
 ==================================================*/
@@ -201,7 +224,16 @@ footer iframe {
 
 /* Extra Small Devices, Phones */
 
-@media only screen and (min-width: 480px) {}
+@media only screen and (max-width: 480px) {
+    .tpanel {
+    height: 250px;
+    width: 200px;
+}
+#cybernix{
+    background-image: url(../img/cybernix.jpg);
+     background-size: cover;
+}
+}
 
 
 /* Small Devices, Tablets */
