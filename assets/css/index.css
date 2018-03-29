@@ -133,6 +133,8 @@ header:hover+nav-dropdown {
 .tpanel {
     height: 80vh;
     width: 50vw;
+    border-radius: 10px;
+    box-shadow: 5px -2px 19px 0px #020202b0;
 }
 
 .tpanel-default{
@@ -232,6 +234,36 @@ footer iframe {
 #cybernix{
     background-image: url(../img/cybernix.jpg);
      background-size: cover;
+}
+.navbar-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#nav-pad{
+    background-color: rgba(0,0,0,0.8);
+}
+.navbar-collapse li:hover{
+    background-color: rgba(0,0,0,0.7);
+}
+#nn{
+    border-color: transparent;
+}
+#nn .icon-bar{
+    background-color: white;
+}
+#nn:hover {
+    border-color: transparent;
+    background-color: transparent;
+}
+.aven-logo{
+    padding:auto;
+}
+.blackdiv:hover:after {
+    height: 30%;
+}
+.navbar-header div{
+    height: 60px;
 }
 }
 
