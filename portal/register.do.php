@@ -13,7 +13,7 @@ if (isset($_POST['name'],$_POST['email'], $_POST['username'], $_POST['password']
 
     //checking if any fields are empty
     if(empty($_POST['name'])||empty($_POST[email])||empty($_POST['username'])||empty($_POST['password'])||empty($_POST['confirm'])){
-        header('Location:http://localhost/avenir18/avenir18/portal/login.php?signup=empty');
+        header('Location:http://localhost/avenir18/portal/login.php?signup=empty');
         //header('Location: ../login.php?signup=empty');
         exit();
     }
@@ -90,7 +90,7 @@ if (isset($_POST['name'],$_POST['email'], $_POST['username'], $_POST['password']
                 }
             }
           
-            header('Location: http://localhost/avenir18/avenir18/portal/dashboard.html');
+            header('Location: http://localhost/avenir18/portal/dashboard.html');
             //header('Location: ../dash.html');
             exit();
         }else{
@@ -100,7 +100,7 @@ if (isset($_POST['name'],$_POST['email'], $_POST['username'], $_POST['password']
         
     }
 
-   header('Location: http://localhost/avenir18/avenir18/portal/login.php?err='.$error_msg);
+   header('Location: http://localhost/avenir18/portal/login.php?err='.$error_msg);
   // header('Location: ../login.php?err='.$error_msg);
 
 }
