@@ -18,11 +18,24 @@ body {
     top:0; left:0;
     background:rgba(0,0,0,0.9);
     height:0;
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
-    -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+    /*transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+    -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;*/
 }
 .blackdiv:hover:after {
-    height: 15%;
+    animation: bounce 0.8s forwards;
+}
+@keyframes bounce {
+	0% {height: 0; }
+	25% {height: 5%;}
+	45% {height: 10%;}
+	50% {
+	height: 15%
+	}
+	60% {
+	height: 18%
+	}
+	70% {height: 12%;}
+	100% {height: 15%;}
 }
 .navbar{
     border-radius: 0px !important;
@@ -93,6 +106,21 @@ header:hover+nav-dropdown {
 
 .navbar-default .navbar-header>.navbar-brand {
     background: transparent;
+}
+.navbar-brand img {
+	transition: all 1s;
+}
+.navbar-brand img:hover {
+	transform: rotateY(180deg);
+	/*animation: spin 1s forwards;*/
+}
+@keyframes spin {
+	from {
+				-webkit-transform: rotate(0deg);
+	}
+	to {
+				-webkit-transform: rotate(359deg);
+	}
 }
 
 .nav-dropdown {

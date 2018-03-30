@@ -55,7 +55,8 @@ CREATE TABLE `students` (
   `username` varchar(32) NOT NULL,
   `password` varchar(128) NOT NULL,
   `confirm` varchar(128) NOT NULL,
-  `salt` varchar(128) NOT NULL
+  `salt` varchar(128) NOT NULL,
+  capatcha varchar(64)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
