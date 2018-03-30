@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Profile</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/css/profile.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <link rel="icon" type="text/png" href="../assets/img/2102-min-tiny.png">
+</head>
+<body>
+<nav>
+    <div class="avenlogo">
+        <img src="../assets/img/avenir (1).png" style="margin-top: 20px;">
+    </div>
+    <div class="avenlogo">
+        <img src="../assets/img/nsec logo.png" style=" height: 75px;">
+    </div>
+</nav>
+<div class="container" style="margin-top: 50px;">
+<div class="stepwizard">
+    <div class="stepwizard-row setup-panel">
+        <div class="stepwizard-step">
+            <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+            <p>Step 1</p>
+        </div>
+        <div class="stepwizard-step">
+            <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+            <p>Step 2</p>
+        </div>
+        <div class="stepwizard-step">
+            <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+            <p>Step 3</p>
+        </div>
+    </div>
+</div>
+<form role="form" method="post" action="profile.do.php">
+    <div class="row setup-content" id="step-1">
+        <div class="col-xs-12">
+            <div class="col-md-12">
+                <h3> Step 1</h3>
+                <div class="form-group">
+                    <label class="control-label">First Name</label>
+                    <input  maxlength="100" type="text" name="first" required="required" class="form-control" placeholder="Enter First Name"  />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Last Name</label>
+                    <input maxlength="100" type="text" name="last" required="required" class="form-control" placeholder="Enter Last Name" />
+                </div>
+                 <div class="form-group">
+                    <label class="control-label">College Name</label>
+                    <input maxlength="100" type="text" name="college" required="required" class="form-control" placeholder="Enter College Name" />
+                </div>
+                <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+            </div>
+        </div>
+    </div>
+    <div class="row setup-content" id="step-2">
+        <div class="col-xs-12">
+            <div class="col-md-12">
+                <h3> Step 2</h3>
+                 <div class="form-group">
+                    <label class="control-label">Address</label>
+                    <input maxlength="100" type="text" name="address" required="required" class="form-control" placeholder="Enter Address" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Email</label>
+                    <input type="email" name="email" required="required" class="form-control" placeholder="Enter Email" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Mobile Number</label>
+                    <input maxlength="10" type="text" name="mobile1" required="required" class="form-control" placeholder="Enter Mobile Number"  />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Alternate Mobile Number</label>
+                    <input maxlength="10" type="text" name="mobile2" required="required" class="form-control" placeholder="Enter Alternate Number"  />
+                </div>
+                <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+            </div>
+        </div>
+    </div>
+    <div class="row setup-content" id="step-3">
+        <div class="col-xs-12">
+            <div class="col-md-12">
+                <h3> Step 3</h3>
+                <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+<script type="text/javascript">
+$(document).ready(function () {
+
+    var navListItems = $('div.setup-panel div a'),
+            allWells = $('.setup-content'),
+            allNextBtn = $('.nextBtn');
+
+    allWells.hide();
+
+    navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+                $item = $(this);
+
+        if (!$item.hasClass('disabled')) {
+            navListItems.removeClass('btn-primary').addClass('btn-default');
+            $item.addClass('btn-primary');
+            allWells.hide();
+            $target.show();
+            $target.find('input:eq(0)').focus();
+        }
+    });
+
+    allNextBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+        $(".form-group").removeClass("has-error");
+        for(var i=0; i<curInputs.length; i++){
+            if (!curInputs[i].validity.valid){
+                isValid = false;
+                $(curInputs[i]).closest(".form-group").addClass("has-error");
+            }
+        }
+
+        if (isValid)
+            nextStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    $('div.setup-panel div a.btn-primary').trigger('click');
+});
+</script>
+</body>
+</html>
