@@ -32,8 +32,8 @@
     <!-- form-start    -->
     <div class="row main">
     		<div class="quo">
-    			<img src="../assets/img/avenir-logo-loading-animation.gif">
-    			<img src="../assets/img/main_1.jpg" style="height: 31px; width: 600px; margin: 10px;">
+    			<img src="../assets/img/avenir-logo-loading-animation.gif" style="display: block; margin-right: auto; margin-left: auto; ">
+    			<img src="../assets/img/main_1.png" style="  width: 700px; height: 31px;">
     		</div>
 
 				<div class="main-login main-center">
@@ -65,7 +65,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+									<input type="email" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
 								</div>
 							</div>
 						</div>
@@ -85,7 +85,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" pattern=".{5,10}" required title="5 to 10 characters"/>
 								</div>
 							</div>
 						</div>
