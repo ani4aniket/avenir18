@@ -1,17 +1,18 @@
+
 <?php
-include_once '../../includes/app.php';
+include_once '../includes/app.php';
 
 $error = 0;
 
-if (isset($_POST['email'], $_POST['password'])) {
-    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $password = $_POST['p']; // The hashed password.
+if (isset($_POST['username'], $_POST['password'])) {
+    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_EMAIL);
+    $password = $_POST['password']; // The hashed password.
 
-    if (login($email, $password, $mysqli, 2) == true) {
-
+    if (login($username, $password, $mysqli) == true) {
+        
         //echo "login";
         // Login success
-        header("Location: panel");
+        header("Location:http://localhost/avenir18/avenir18/portal/dashboard.html");
         exit();
     } else {
         // Login failed
@@ -23,6 +24,7 @@ if (isset($_POST['email'], $_POST['password'])) {
 
 }
 
-header('Location: login?err='.$error);
+header('Location: http://localhost/avenir18/avenir18/portal/login.php?err='.$username);
 
 exit();
+?>

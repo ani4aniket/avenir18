@@ -25,7 +25,7 @@ function sec_session_start() {
     session_regenerate_id();    // regenerated the session, delete the old one.
 }
 
-function login($username, $password1, $mysqli, $type=2) {
+function login($username, $password1, $mysqli) {
 
     $table = "students";
     $tableConstraint = "";
@@ -59,16 +59,16 @@ function login($username, $password1, $mysqli, $type=2) {
                 $user_browser = $_SERVER['HTTP_USER_AGENT'];
 
                 // XSS protection as we might print this value
-                $user_id = preg_replace("/[^0-9]+/", "", $user_id);
-                $_SESSION['user_id'] = $user_id;
+                $id = preg_replace("/[^0-9]+/", "", $id);
+                $_SESSION['id'] = $id;
 
                 // XSS protection as we might print this value
                 $username = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $username);
 
                 $_SESSION['username'] = $username;
                 $_SESSION['login_string'] = hash('sha512', $password1 . $user_browser);
-                $_SESSION['login_type'] = $type;
-                login_check($stmt,2);
+               // $_SESSION['login_type'] = $type;
+                login_check($stmt);
 
                 // Login successful.
                 return true;
@@ -116,27 +116,24 @@ function login($username, $password1, $mysqli, $type=2) {
 //    }
 //}
 
-function login_check($mysqli, $type=2) {
+function login_check($mysqli) {
 
     // Check if all session variables are set
-    if (isset($_SESSION['user_id'], $_SESSION['username'], $_SESSION['login_string'], $_SESSION['login_type'])) {
-        $user_id = $_SESSION['user_id'];
+    if (isset($_SESSION['id'], $_SESSION['username'], $_SESSION['login_string'])) {
+        $id = $_SESSION['id'];
         $login_string = $_SESSION['login_string'];
         $username = $_SESSION['username'];
-        $type = $_SESSION['login_type'];
+        //$type = $_SESSION['login_type'];
 
         $table = "students";
 
-        if($type==1){
-            $table="admins";
-        }
-
+       
         // Get the user-agent string of the user.
         $user_browser = $_SERVER['HTTP_USER_AGENT'];
 
         if ($stmt = $mysqli->prepare("SELECT password FROM ".$table." WHERE id = ? LIMIT 1")) {
             // Bind "$user_id" to parameter.
-            $stmt->bind_param('i', $user_id);
+            $stmt->bind_param('i', $id);
             $stmt->execute();   // Execute the prepared query.
             $stmt->store_result();
 

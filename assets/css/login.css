@@ -98,6 +98,9 @@ nav{
     background-position: bottom;
     background-origin: bottom;
   }
+    .alert{
+        max-width: 300px;
+    }
 }
 
 .navs{
@@ -204,6 +207,4 @@ input.btn {
 
 .alert{
   text-align: center;
-  width: 29%;
-  margin-left:72.4%;
 }

@@ -27,13 +27,67 @@
 	</div>
 </nav>
 <div class="container">
+    <?php
+    $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    
+    if(strpos($fullUrl,"signup=empty")){  ?>
+        <div class="alert alert-warning alert-dismissible">
+                <strong>Fileds are not set</strong> 
+            </div>
+            <?php
+            
+    }
+
+    elseif(strpos($fullUrl,"err=1")==true){  ?>
+        <div class="alert alert-warning alert-dismissible">
+                <strong>Not a Valid email</strong> 
+            </div>
+            <?php
+            //exit();
+    }
+
+    elseif(strpos($fullUrl,"err=3")==true){ ?>
+        <div class="alert alert-warning alert-dismissible">
+                <strong>User email Exists</strong> 
+        </div>
+            <?php
+            //exit();
+    }
+
+    elseif(strpos($fullUrl,"err=4")==true){ ?>
+        <div class="alert alert-warning alert-dismissible">
+                <strong>Error: Try again later</strong> 
+         </div>
+            <?php
+        //    exit();
+    }
+
+    elseif(strpos($fullUrl,"err=5")==true){ ?>
+        <div class="alert alert-warning alert-dismissible">
+                <strong>Username exists</strong> 
+        </div>
+            <?php
+          //  exit();
+    }
+
+    elseif(strpos($fullUrl,"err=7")==true){ ?>
+        <div class="alert alert-warning alert-dismissible">
+                <strong>Password do not match</strong> 
+        </div>
+            <?php
+            //exit();    
+
+    }
+
+
+   ?>
 	
 
     <!-- form-start    -->
     <div class="row main">
     		<div class="quo">
-    			<img src="../assets/img/avenir-logo-loading-animation.gif">
-    			<img src="../assets/img/main_1.jpg" style="height: 31px; width: 600px; margin: 10px;">
+    			<img src="../assets/img/avenir-logo-loading-animation.gif" style="display: block; margin-right: auto; margin-left: auto; ">
+    			<img src="../assets/img/main_1.png" style="  width: 700px; height: 31px;">
     		</div>
 
 				<div class="main-login main-center">
@@ -65,7 +119,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+									<input type="email" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
 								</div>
 							</div>
 						</div>
@@ -85,7 +139,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" pattern=".{5,10}" required title="5 to 10 characters"/>
 								</div>
 							</div>
 						</div>
@@ -136,61 +190,8 @@
 					</form>
 			</div>
 	</div>
-	</br>
-   <?php
-    $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    
-    if(strpos($fullUrl,"signup=empty")){  ?>
-        <div class="alert alert-warning alert-dismissible">
-                <strong>Fileds are not set</strong> 
-            </div>
-            <?php
-            exit();
-    }
 
-    elseif(strpos($fullUrl,"err=1")==true){  ?>
-        <div class="alert alert-warning alert-dismissible">
-                <strong>Not a Valid email</strong> 
-            </div>
-            <?php
-            exit();
-    }
-
-    elseif(strpos($fullUrl,"err=3")==true){ ?>
-        <div class="alert alert-warning alert-dismissible">
-                <strong>User email Exists</strong> 
-        </div>
-            <?php
-            exit();
-    }
-
-    elseif(strpos($fullUrl,"err=4")==true){ ?>
-        <div class="alert alert-warning alert-dismissible">
-                <strong>Error: Try again later</strong> 
-         </div>
-            <?php
-            exit();
-    }
-
-    elseif(strpos($fullUrl,"err=5")==true){ ?>
-        <div class="alert alert-warning alert-dismissible">
-                <strong>Username exists</strong> 
-        </div>
-            <?php
-            exit();
-    }
-
-    elseif(strpos($fullUrl,"err=7")==true){ ?>
-        <div class="alert alert-warning alert-dismissible">
-                <strong>Password do not match</strong> 
-        </div>
-            <?php
-            exit();    
-
-    }
-
-
-   ?>
+   
 </div>
 <script type="text/javascript" src="../assets/js/login.js"></script>
 
