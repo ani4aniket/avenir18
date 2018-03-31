@@ -48,7 +48,7 @@
 
     elseif(strpos($fullUrl,"err=3")==true){ ?>
         <div class="alert alert-warning alert-dismissible">
-                <strong>User email Exists</strong> 
+                <strong>User email already Exists</strong> 
         </div>
             <?php
             //exit();
@@ -64,7 +64,7 @@
 
     elseif(strpos($fullUrl,"err=5")==true){ ?>
         <div class="alert alert-warning alert-dismissible">
-                <strong>Username exists</strong> 
+                <strong>Username already exists</strong> 
         </div>
             <?php
           //  exit();
@@ -72,7 +72,7 @@
 
     elseif(strpos($fullUrl,"err=7")==true){ ?>
         <div class="alert alert-warning alert-dismissible">
-                <strong>Password do not match</strong> 
+                <strong>Passwords do not match</strong> 
         </div>
             <?php
             //exit();    
