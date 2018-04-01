@@ -15,6 +15,11 @@ if($logged) { ?>
   
 </head>
 <body>
+<nav>
+<div class="avenlogo">
+    <img src="../assets/img/avenir (1).png" style="margin-top: 20px;">
+  </div>
+</nav>
 <div id="wrapper">
         <div class="overlay"></div>
     
@@ -23,7 +28,7 @@ if($logged) { ?>
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                       <img src="../assets/img/avenir (1).png">
+                       <img src="../assets/img/avenir1.png">
                     </a>
                 </li>
                 <li>

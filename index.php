@@ -1,16 +1,19 @@
+<?php
+include_once 'includes/app.php';
+?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>AVENIR 18</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
-    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/index2.css">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/jquery.flipster.css">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="assets/img/2102-min-tiny.png">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -32,16 +35,20 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-brand-centered" style="margin-top: 15px;">
                     <ul class="nav navbar-nav">
-                        <li><a href="javascript:slide(0);">Coding</a></li>
-                        <li><a href="javascript:slide(1);">Robotics</a></li>
-                        <li><a href="javascript:slide(2);">Photography</a></li>
-                        <li><a href="javascript:slide(3);">Fun</a></li>
+                        <li><a href="portal/events#section02"><i class="fa fa-code" aria-hidden="true"></i> Cybernix</a></li>
+                        <li><a href="portal/events#section03"><i class="fa fa-reddit" aria-hidden="true"></i> Robonix</a></li>
+                        <li><a href="portal/events#section04"><i class="fa fa-camera-retro" aria-hidden="true"></i> Lensified</a></li>
+                        <li><a href="portal/events#section05"><i class="fa fa-smile-o" aria-hidden="true"></i> Funz</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="javascript:slide(5);">About</a></li>
-                        <li><a href="javascript:slide(6);">Contact</a></li>
-                        <li><a href="javascript:slide(7);">Sponsors</a></li>
-                        <li><a href="javascript:slide(8);">Register</a></li>
+                        <li><a href="portal/about"><i class="fa fa-users" aria-hidden="true"></i> Credits</a></li>
+                        <li><a href="https://www.facebook.com/phoenix.avenir"><i class="fa fa-telegram" aria-hidden="true"></i> Contact</a></li>
+                        <li><a href="#"><i class="fa fa-handshake-o" aria-hidden="true"></i> Sponsors</a></li>
+                        <?php if(isset($_SESSION["username"])) { ?>
+                        <li><a href="portal/dashboard"><i class="fa fa-user-circle" aria-hidden="true"></i> <?php echo $_SESSION["username"]; ?></a></li>
+                        <?php } else { ?>
+                        <li><a href="portal/login"><i class="fa fa-user-plus" aria-hidden="true"></i> Register/Signin</a></li>
+                        <?php } ?>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -54,124 +61,123 @@
     <div id="main">
 
     	<ul>
-    		<li>
-		    	<div class="tpanel tpanel-default" id="cybernix">
-		    		<div class="tpanel-head">
-		    			CyberNix
-		    		</div>
-		    		<div class="tpanel-body">
-		    			Yahoooooo
-		    		</div>
-		    		<div class="tpanel-foot">
-		    			<a class="tbtn" href="#">More.. </a>
-		    		</div>
-		    	</div>
-		    </li>
-		    <li>
-		    	<div class="tpanel tpanel-default" id="robonix">
-		    		<div class="tpanel-head">
-		    			RoboNix
-		    		</div>
-		    		<div class="tpanel-body">
-		    			Yahoooooo
-		    		</div>
-		    		<div class="tpanel-foot">
-		    			<a class="tbtn" href="#">More.. </a>
-		    		</div>
-		    	</div>
-		    </li>
-		    <li>
-		    	<div class="tpanel tpanel-default" id="lensified">
-		    		<div class="tpanel-head">
-		    			Lensified
-		    		</div>
-		    		<div class="tpanel-body">
-		    			Yahoooooo
-		    		</div>
-		    		<div class="tpanel-foot">
-		    			<a class="tbtn" href="#">More.. </a>
-		    		</div>
-		    	</div>
-		    </li>
-		    <li>
-		    	<div class="tpanel tpanel-default">
-		    		<div class="tpanel-head">
-		    			Miscellaneous
-		    		</div>
-		    		<div class="tpanel-body">
-		    			Yahoooooo
-		    		</div>
-		    		<div class="tpanel-foot">
-		    			<a class="tbtn" href="#">More.. </a>
-		    		</div>
-		    	</div>
-		    </li>
-		    <li>
-		    	<div class="tpanel tpanel-default">
-		    		<div class="tpanel-head">
-		    			Home
-		    		</div>
-		    		<div class="tpanel-body">
-		    			Yahoooooo
-		    		</div>
-		    		<div class="tpanel-foot">
-		    			<a class="tbtn" href="#">More.. </a>
-		    		</div>
-		    	</div>
-		    </li>
             <li>
-                <div class="tpanel tpanel-default">
+                <div class="tpanel tpanel-default" id="cybernix">
+                    <div class="tpanel-head">
+                        CyberNix
+                    </div>
+                    <!-- <div class="tpanel-body">
+                        Yahoooooo
+                    </div> -->
+                    <div class="tpanel-foot">
+                        <a class="tbtn" href="portal/events#section02">More.. </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="tpanel tpanel-default" id="robonix">
+                    <div class="tpanel-head">
+                        Robonix
+                    </div>
+                    <!-- <div class="tpanel-body">
+                        Yahoooooo
+                    </div> -->
+                    <div class="tpanel-foot">
+                        <a class="tbtn" href="portal/events#section03">More.. </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="tpanel tpanel-default" id="lensified">
+                    <div class="tpanel-head">
+                        Lensified
+                    </div>
+                    <!-- <div class="tpanel-body">
+                        Yahoooooo
+                    </div> -->
+                    <div class="tpanel-foot">
+                        <a class="tbtn" href="portal/events#section04">More.. </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="tpanel tpanel-default" id="ani">
+                    <div class="tpanel-head">
+                        Funz
+                    </div>
+                    <!-- <div class="tpanel-body">
+                        Yahoooooo
+                    </div> -->
+                    <div class="tpanel-foot">
+                        <a class="tbtn" href="portal/events#section05">More.. </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="tpanel tpanel-default" id="homm">
+                    <div class="tpanel-head">
+                        Home
+                    </div>
+                    <!-- <div class="tpanel-body">
+                        Yahoooooo
+                    </div> -->
+<!--                     <div class="tpanel-foot">
+                        <a class="tbtn" href="">More.. </a>
+                    </div> -->
+                </div>
+            </li>
+            <li>
+                <div class="tpanel tpanel-default" id="abt">
                     <div class="tpanel-head">
                         About
                     </div>
-                    <div class="tpanel-body">
+                   <!--  <div class="tpanel-body">
                         Yahoooooo
-                    </div>
+                    </div> -->
                     <div class="tpanel-foot">
-                        <a class="tbtn" href="#">More.. </a>
+                        <a class="tbtn" href="https://www.phoenixnsec.org">More.. </a>
                     </div>
                 </div>
             </li>
             <li>
-                <div class="tpanel tpanel-default">
+                <div class="tpanel tpanel-default" id="cont">
                     <div class="tpanel-head">
                         Contact
                     </div>
-                    <div class="tpanel-body">
+                    <!-- <div class="tpanel-body">
                         Yahoooooo
-                    </div>
+                    </div> -->
                     <div class="tpanel-foot">
-                        <a class="tbtn" href="#">More.. </a>
+                        <a class="tbtn" href="https://www.facebook.com/phoenix.avenir">More.. </a>
                     </div>
                 </div>
             </li>
             <li>
-                <div class="tpanel tpanel-default">
+                <div class="tpanel tpanel-default" id="spon">
                     <div class="tpanel-head">
                         Sponsors
                     </div>
-                    <div class="tpanel-body">
+                    <!-- <div class="tpanel-body">
                         Yahoooooo
-                    </div>
+                    </div> -->
                     <div class="tpanel-foot">
                         <a class="tbtn" href="#">More.. </a>
                     </div>
                 </div>
             </li>
             <li>
-                <div class="tpanel tpanel-register">
+                <div class="tpanel tpanel-register" id="regi">
                     <div class="tpanel-head">
                         Register
                     </div>
-                    <div class="tpanel-body">
+                    <!-- <div class="tpanel-body">
                         Yahoooooo
-                    </div>
+                    </div> -->
                     <div class="tpanel-foot">
-                        <a class="tbtn" href="#">More.. </a>
+                        <a class="tbtn" href="portal/login">More.. </a>
                     </div>
                 </div>
             </li>
-	    </ul>
     </div>
 
 <footer>

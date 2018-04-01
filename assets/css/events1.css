@@ -24,7 +24,7 @@ section::after {
 }
 section h1 {
   position: absolute;
-  top: 50%;
+  top: 5%;
   left: 50%;
   z-index: 2;
   -webkit-transform: translate(-50%, -50%);
@@ -36,16 +36,13 @@ section h1 {
 }
 
 #section01 { background: url(../img/CrOALT8.png) center center / cover no-repeat;}
-#section02 { background: url(https://www.nxworld.net/example/css-scroll-down-button/bg02.jpg) center center / cover no-repeat;}
-#section03 { background: url(https://www.nxworld.net/example/css-scroll-down-button/bg03.jpg) center center / cover no-repeat;}
-#section04 { background: url(https://www.nxworld.net/example/css-scroll-down-button/bg04.jpg) center center / cover no-repeat;}
-#section05 { background: url(https://www.nxworld.net/example/css-scroll-down-button/bg05.jpg) center center / cover no-repeat;}
-#section06 { background: url(https://www.nxworld.net/example/css-scroll-down-button/bg06.jpg) center center / cover no-repeat;}
-#section07 { background: url(https://www.nxworld.net/example/css-scroll-down-button/bg07.jpg) center center / cover no-repeat;}
-#section08 { background: url(https://www.nxworld.net/example/css-scroll-down-button/bg08.jpg) center center / cover no-repeat;}
-#section09 { background: url(https://www.nxworld.net/example/css-scroll-down-button/bg09.jpg) center center / cover no-repeat;}
-#section10 { background: url(https://www.nxworld.net/example/css-scroll-down-button/bg10.jpg) center center / cover no-repeat;}
-
+#section02 { background: url(../img/section2.png) center center / cover no-repeat;}
+#section03 { background: url(../img/section3.png) center center / cover no-repeat;}
+#section04 { background: url(../img/section4.png) center center / cover no-repeat;}
+#section05 { background: url(../img/section5.png) center center / cover no-repeat;}
+#section06 { background: url(../img/section6.png) center center / cover no-repeat;}
+#section07 { background: url(../img/section7.png) center center / cover no-repeat;}
+#section08 { background: url(../img/section8.png) center center / cover no-repeat;}
 #thanks {
   background-color: #fff;
 }

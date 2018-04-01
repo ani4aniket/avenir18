@@ -157,44 +157,57 @@ header:hover+nav-dropdown {
     background-image: url(../img/cybernix.jpg);
      background-color: #f35b5a;
      background-repeat: no-repeat;
+     background-size: 100%;
 }
 #lensified{
     background-image: url(../img/lensified.jpg);
     background-color: #f6e211;
     background-repeat: no-repeat;
+    background-size: 100%;
 }
 #robonix{
     background-image: url(../img/robonix.jpg);
     background-color: #19dddc;
     background-repeat: no-repeat;
+    background-size: 100%;
 }
 #ani{
     background-image: url(../img/fun_events.jpg);
     background-repeat: no-repeat;
     background-color: #691e63;
+    background-size: 100%;
 }
 #cont{
     background-image: url(../img/contact_us.png);
     background-repeat: no-repeat;
     background-color: #f1fa05;
+    background-size: 100%;
 }
 #spon{
     background-image: url(../img/sponsors.jpg);
     background-repeat: no-repeat;
     background-color: #19dddc;
+    background-size: 100%;
 }
 #regi{
     background-image: url(../img/Registration.jpg);
     background-repeat: no-repeat;
     background-color: #f73744;
+    background-size: 100%;
 }
 #homm{
-    background-image: url(../img/aVENIR HOME.png);
+    background-image: url(../img/aVENIRHOME.png);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-color: #05050d;
 }
 #abt{
     background-image: url(../img/NSECforhome.png);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-color: #05050d;
 }
 .tpanel {
     height: 80vh;
@@ -231,12 +244,12 @@ header:hover+nav-dropdown {
 }
 
 footer {
-    background-color: black;
+    background-color: #00897b;
     z-index: 10;
     width: 100%;
     bottom: 0;
     font-weight: lighter;
-    color: #8a0b0b;
+    color: #fff;
     margin-top: 900px;
 }
 .footerHeader{
@@ -347,3 +360,9 @@ footer iframe {
 /* Large Devices, Wide Screens */
 
 @media only screen and (min-width: 1200px) {}
+#homm .tpanel-head {
+    color: white;
+}
+#abt .tpanel-head {
+    color: whitesmoke;
+}
