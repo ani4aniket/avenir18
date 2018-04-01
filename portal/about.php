@@ -1,3 +1,6 @@
+<?php
+include_once '../includes/app.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,26 +27,22 @@
                        <img src="../assets/img/avenir1.png">
                     </a>
                 </li>
+                <?php if(isset($_SESSION["username"])) { ?>
                 <li>
-                    <a href="#">Home</a>
+                    <a href="#" style="text-transform: uppercase;"><em><?php echo $_SESSION["username"] ?></em></a>
+                </li>
+                <?php } ?>
+                <li>
+                    <a href="/index">Home</a>
                 </li>
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="events">Events</a>
                 </li>
                 <li>
-                    <a href="#">Profile</a>
+                    <a href="https://www.facebook.com/phoenix.avenir">Contact Us</a>
                 </li>
                 <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">Payments</a>
-                </li>
-                <li>
-                    <a href="#">Contact Us</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
+                    <a href="logout">Logout</a>
                 </li>
             </ul>
         </nav>
@@ -79,7 +78,6 @@
               </div>
               <h1>Anubhav Singh</h1>
               <h2>Developer</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
               <div class="img-box">
@@ -92,7 +90,6 @@
               </div>
               <h1>Aniket Anand</h1>
               <h2>Developer/Designer</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
               <div class="img-box">
@@ -105,7 +102,6 @@
               </div>
               <h1>Tanweer Anwar</h1>
               <h2>Developer</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
               <div class="img-box">
@@ -118,7 +114,6 @@
               </div>
               <h1>Mahesh Kumar</h1>
               <h2>Designer</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
             
           </div>

@@ -1,3 +1,6 @@
+<?php
+include_once '../includes/app.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,26 +27,22 @@
                        <img src="../assets/img/avenir1.png">
                     </a>
                 </li>
+                <?php if(isset($_SESSION["username"])) { ?>
                 <li>
-                    <a href="#">Home</a>
+                    <a href="#" style="text-transform: uppercase;"><em><?php echo $_SESSION["username"] ?></em></a>
+                </li>
+                <?php } ?>
+                <li>
+                    <a href="/index">Home</a>
                 </li>
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="about">Credits</a>
                 </li>
                 <li>
-                    <a href="#">Profile</a>
+                    <a href="https://www.facebook.com/phoenix.avenir">Contact Us</a>
                 </li>
                 <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">Payments</a>
-                </li>
-                <li>
-                    <a href="#">Contact Us</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
+                    <a href="logout">Logout</a>
                 </li>
             </ul>
         </nav>
@@ -67,35 +66,31 @@
   <a href="#section02"><span></span><span></span><span></span></a>
 </section>
 <section id="section02" class="demo">
-  <h1>#2</h1>
+  <h1>CYBERNIX</h1>
   <a href="#section03"><span></span><span></span><span></span></a>
 </section>
 <section id="section03" class="demo">
-  <h1>#3</h1>
+  <h1>ROBONIX</h1>
   <a href="#section04"><span></span><span></span><span></span></a>
 </section>
 <section id="section04" class="demo">
-  <h1>#4</h1>
+  <h1>LENSIFIED</h1>
   <a href="#section05"><span></span><span></span><span></span></a>
 </section>
 <section id="section05" class="demo">
-  <h1>#5</h1>
+  <h1>GAMING</h1>
   <a href="#section06"><span></span><span></span><span></span></a>
 </section>
 <section id="section06" class="demo">
-  <h1>#6</h1>
+  <h1>FUNZ</h1>
   <a href="#section07"><span></span><span></span><span></span></a>
 </section>
 <section id="section07" class="demo">
-  <h1>#7</h1>
+  <h1>GENERAL</h1>
   <a href="#section08"><span></span><span></span><span></span></a>
 </section>
 <section id="section08" class="demo">
-  <h1>#8</h1>
-  <a href="#section09"><span></span><span></span><span></span></a>
-</section>
-<section id="section09" class="demo">
-  <h1>#9</h1>
+  <h1>NIRMAN</h1>
 </section>
 
     <!-- /#wrapper -->

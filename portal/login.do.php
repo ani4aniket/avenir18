@@ -12,7 +12,8 @@ if (isset($_POST['username'], $_POST['password'])) {
         
         //echo "login";
         // Login success
-        header("Location:http://localhost/avenir18/portal/dashboard.html");
+        $logged = 1;
+        header("Location: dashboard");
         exit();
     } else {
         // Login failed
@@ -24,7 +25,7 @@ if (isset($_POST['username'], $_POST['password'])) {
 
 }
 
-header('Location: http://localhost/avenir18/portal/login.php?err='.$username);
+header('Location: login?err='.$error);
 
 exit();
 ?>

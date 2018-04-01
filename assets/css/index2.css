@@ -1,0 +1,368 @@
+body {
+    background: url('../img/241901.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    display: flex;
+
+    background-repeat: repeat;
+    flex-direction: column;
+    justify-content: space-around;
+    opacity: 0;
+    margin-top: 1080px;
+    animation: slide 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+@keyframes slide {
+    0% {
+        opacity: 0;
+        margin-top: 1080px;
+    }
+    100% { 
+    opacity: 1;
+    margin-top: 0px; }
+}
+#main {
+    opacity: 0;
+    margin-top: 1080px;
+    animation: slide 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+.blackdiv:after {
+    z-index: 10;
+    content: '\A';
+    position: absolute;
+    width: 100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.9);
+    height:0;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+    -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+}
+.blackdiv:hover:after {
+    height: 15%;
+}
+.navbar{
+    border-radius: 0px !important;
+    z-index: 999;
+}
+
+.iconmelon,
+.im {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: block;
+    fill: #525151;
+}
+
+.iconmelon:after,
+.im:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width:768px) {
+    .navbar-brand-centered {
+        position: absolute;
+        left: 50%;
+        display: block;
+        width: 160px;
+        text-align: center;
+        background-color: black;
+    }
+    .navbar>.container .navbar-brand-centered,
+    .navbar>.container-fluid .navbar-brand-centered {
+        margin-left: -80px;
+    }
+}
+
+.aven {
+    background-color: transparent;
+    border-color: transparent;
+    height: 100px;
+}
+
+.aven-logo {
+        margin-right: auto;
+}
+.navbar-collapse .nav>li>a {
+    color: white;
+    font-style: underline;
+    font-size: 1.1em;
+    transition: all 0.5s;
+}
+
+.navbar-collapse .nav>li>a:hover {
+    color: #80DEEA;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+.navbar-collapse .nav>li>a>i:hover {
+    animation: spin 2s infinite;
+}
+header:hover+nav-dropdown {
+    animation: 1s drop 0s forwards;
+}
+
+@keyframes drop {
+    100% {
+        height: 100px;
+    }
+}
+
+.navbar-default .navbar-header>.navbar-brand {
+    background: transparent;
+}
+.navbar-default .navbar-header>.navbar-brand img:hover {
+    animation: spin 2s infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.nav-dropdown {
+    z-index: 999;
+    background-color: black;
+}
+
+#nav-pad {
+    /*padding-top: 35px;*/
+}
+#navs{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#main{
+    top: 10%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    flex-grow: 2;
+}
+
+#cybernix{
+    background-image: url(../img/cybernix.jpg);
+     background-color: #f35b5a;
+     background-repeat: no-repeat;
+     background-size: 100%;
+}
+#lensified{
+    background-image: url(../img/lensified.jpg);
+    background-color: #f6e211;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#robonix{
+    background-image: url(../img/robonix.jpg);
+    background-color: #19dddc;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#ani{
+    background-image: url(../img/fun_events.jpg);
+    background-repeat: no-repeat;
+    background-color: #691e63;
+    background-size: 100%;
+}
+#cont{
+    background-image: url(../img/contact_us.png);
+    background-repeat: no-repeat;
+    background-color: #f1fa05;
+    background-size: 100%;
+}
+#spon{
+    background-image: url(../img/sponsors.jpg);
+    background-repeat: no-repeat;
+    background-color: #19dddc;
+    background-size: 100%;
+}
+#regi{
+    background-image: url(../img/Registration.jpg);
+    background-repeat: no-repeat;
+    background-color: #f73744;
+    background-size: 100%;
+}
+#homm{
+    background-image: url(../img/aVENIRHOME.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-color: #05050d;
+}
+#abt{
+    background-image: url(../img/NSECforhome.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-color: #05050d;
+}
+.tpanel {
+    height: 80vh;
+    width: 50vw;
+    border-radius: 10px;
+    box-shadow: 5px -2px 19px 0px #020202b0;
+}
+
+.tpanel-default{
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.tpanel-register{
+    background: rgba(255, 255, 255, 0.9);
+}
+.tpanel-head {
+    font-family: 'Righteous', cursive;
+    padding: 3%;
+    /*border-bottom: 3px solid #cdcdcd;*/
+    font-size: 3rem;
+    color: black;
+}
+
+.tpanel-foot{
+    bottom: 0px;
+    position: absolute;
+    padding: 2%;
+    background: rgba(0,0,0,0.1);
+    width: 100%;
+    text-align: right;
+}
+.tpanel-foot a{
+    color: darkblue;
+}
+
+footer {
+    background-color: #00897b;
+    z-index: 10;
+    width: 100%;
+    bottom: 0;
+    font-weight: lighter;
+    color: #fff;
+    margin-top: 900px;
+}
+.footerHeader{
+    width:100%;
+    padding:1em;
+    /*background-color:rgba(52, 73, 94,1.0);*/
+    text-align:center;
+    color:white;
+}
+footer h3{
+    font-weight:lighter;
+}
+footer ul{
+    padding-left:5px;
+    list-style:none;
+}
+footer p{
+    text-align : justify;
+    font-size : 12px;
+}
+footer iframe {
+    width:100%;
+    position:relative;
+    height:170px;
+}
+.sm{
+    list-style:none;
+    overflow:auto;
+}
+.sm li {
+    display: inline;
+    padding:5px;
+    float:left;
+} 
+.sm li a img {
+    width:32px;
+}
+
+
+
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+
+/*==========  Mobile First ==========*/
+
+
+/* Custom, iPhone Retina */
+
+@media only screen and (min-width: 320px) {}
+
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (max-width: 480px) {
+    .tpanel {
+    height: 250px;
+    width: 200px;
+}
+#cybernix{
+    background-image: url(../img/cybernix.jpg);
+     background-size: cover;
+}
+.navbar-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#nav-pad{
+    background-color: rgba(0,0,0,0.8);
+}
+.navbar-collapse li:hover{
+    background-color: rgba(0,0,0,0.7);
+}
+#nn{
+    border-color: transparent;
+}
+#nn .icon-bar{
+    background-color: white;
+}
+#nn:hover {
+    border-color: transparent;
+    background-color: transparent;
+}
+.aven-logo{
+    padding:auto;
+}
+.blackdiv:hover:after {
+    height: 30%;
+}
+.navbar-header div{
+    height: 60px;
+}
+}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width: 768px) {}
+
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width: 992px) {}
+
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width: 1200px) {}
+#homm .tpanel-head {
+    color: white;
+}
+#abt .tpanel-head {
+    color: whitesmoke;
+}

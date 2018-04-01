@@ -13,7 +13,7 @@ if (isset($_POST['name'],$_POST['email'], $_POST['username'], $_POST['password']
 
     //checking if any fields are empty
     if(empty($_POST['name'])||empty($_POST[email])||empty($_POST['username'])||empty($_POST['password'])||empty($_POST['confirm'])){
-        header('Location:http://localhost/avenir18/portal/login.php?signup=empty');
+        header('Location: login?signup=empty');
         //header('Location: ../login.php?signup=empty');
         exit();
     }
@@ -83,14 +83,12 @@ if (isset($_POST['name'],$_POST['email'], $_POST['username'], $_POST['password']
                 $insert_stmt->bind_param('ssssss', $name, $email,$username, $password,$confirm, $random_salt);
                 // Execute the prepared query.
                 if (! $insert_stmt->execute()) {
-                    echo $insert_stmt->error;
-                    echo "<br />". $random_salt;
-                  header('Location: register?err=5');
+                  header('Location: login');
                    exit();
                 }
             }
           
-            header('Location: http://localhost/avenir18/portal/dashboard.html');
+            header('Location: dashboard');
             //header('Location: ../dash.html');
             exit();
         }else{
@@ -100,13 +98,13 @@ if (isset($_POST['name'],$_POST['email'], $_POST['username'], $_POST['password']
         
     }
 
-   header('Location: http://localhost/avenir18/portal/login.php?err='.$error_msg);
+   header('Location: login.?err='.$error_msg);
   // header('Location: ../login.php?err='.$error_msg);
 
 }
 else {
     
-    header("Location:http://localhost/avenir18/avenir18/portal/login.php");
+    header("Location: login");
     //header("Location: ../login.php");
 }
 

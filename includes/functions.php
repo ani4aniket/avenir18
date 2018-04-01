@@ -28,7 +28,6 @@ function sec_session_start() {
 function login($username, $password1, $mysqli) {
 
     $table = "students";
-    $tableConstraint = "";
 
     #if($type==1){
      #   $table="admins";
@@ -37,7 +36,7 @@ function login($username, $password1, $mysqli) {
 
     // Using prepared statements means that SQL injection is not possible.
     if ($stmt = $mysqli->prepare("SELECT id, username, password, salt
-                  FROM ".$table." WHERE ".$tableConstraint." username = ?  LIMIT 1")) {
+                  FROM ".$table." WHERE username = ?  LIMIT 1")) {
         $stmt->bind_param('s', $username);  // Bind "$username" to parameter.
         $stmt->execute();    // Execute the prepared query.
         $stmt->store_result();
@@ -68,7 +67,6 @@ function login($username, $password1, $mysqli) {
                 $_SESSION['username'] = $username;
                 $_SESSION['login_string'] = hash('sha512', $password1 . $user_browser);
                // $_SESSION['login_type'] = $type;
-                login_check($stmt);
 
                 // Login successful.
                 return true;
@@ -131,10 +129,11 @@ function login_check($mysqli) {
         // Get the user-agent string of the user.
         $user_browser = $_SERVER['HTTP_USER_AGENT'];
 
-        if ($stmt = $mysqli->prepare("SELECT password FROM ".$table." WHERE id = ? LIMIT 1")) {
+        if ($stmt = $mysqli->prepare("SELECT password FROM students WHERE username = ? LIMIT 1")) {
             // Bind "$user_id" to parameter.
-            $stmt->bind_param('i', $id);
+            $stmt->bind_param('s', $username);
             $stmt->execute();   // Execute the prepared query.
+            echo $stmt->error;
             $stmt->store_result();
 
             if ($stmt->num_rows == 1) {

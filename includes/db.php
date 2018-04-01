@@ -4,7 +4,7 @@
  */
 define("HOST", "localhost");     // The host you want to connect to.
 define("USER", "root");    // The database username.
-define("PASSWORD", "");    // The database password.
+define("PASSWORD", "qwerty");    // The database password.
 define("DATABASE", "avenir");    // The database name.
 
 define("CAN_REGISTER", "any");
