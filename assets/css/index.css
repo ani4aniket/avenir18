@@ -75,10 +75,13 @@ body {
 .navbar-collapse .nav>li>a {
     color: white;
     font-style: underline;
+    transition: all 0.5s;
 }
 
 .navbar-collapse .nav>li>a:hover {
-    color: #0069c8;
+    color: #80DEEA;
+    font-weight: bold;
+    font-size: 1.3em;
 }
 
 header:hover+nav-dropdown {
@@ -93,6 +96,17 @@ header:hover+nav-dropdown {
 
 .navbar-default .navbar-header>.navbar-brand {
     background: transparent;
+}
+.navbar-default .navbar-header>.navbar-brand img:hover {
+    animation: spin 2s infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .nav-dropdown {
