@@ -1,5 +1,5 @@
 body {
-    background: url('https://www.wallpaperup.com/uploads/wallpapers/2013/12/16/196979/dbe3b4ba9359b0daea07c5bae2da8f0f-700.jpg') no-repeat center center fixed; 
+    background: url('../img/241901.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -18,24 +18,11 @@ body {
     top:0; left:0;
     background:rgba(0,0,0,0.9);
     height:0;
-    /*transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
-    -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;*/
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+    -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
 }
 .blackdiv:hover:after {
-    animation: bounce 0.8s forwards;
-}
-@keyframes bounce {
-	0% {height: 0; }
-	25% {height: 5%;}
-	45% {height: 10%;}
-	50% {
-	height: 15%
-	}
-	60% {
-	height: 18%
-	}
-	70% {height: 12%;}
-	100% {height: 15%;}
+    height: 15%;
 }
 .navbar{
     border-radius: 0px !important;
@@ -106,21 +93,15 @@ header:hover+nav-dropdown {
 
 .navbar-default .navbar-header>.navbar-brand {
     background: transparent;
-}
-.navbar-brand img {
-	transition: all 1s;
-}
-.navbar-brand img:hover {
-	transform: rotateY(180deg);
-	/*animation: spin 1s forwards;*/
+    animation: spin 1s forwards;
 }
 @keyframes spin {
-	from {
-				-webkit-transform: rotate(0deg);
-	}
-	to {
-				-webkit-transform: rotate(359deg);
-	}
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(180deg);
+    }
 }
 
 .nav-dropdown {
@@ -148,16 +129,43 @@ header:hover+nav-dropdown {
 
 #cybernix{
     background-image: url(../img/cybernix.jpg);
-     background-size: cover;
+     background-color: #f35b5a;
+     background-repeat: no-repeat;
 }
 #lensified{
     background-image: url(../img/lensified.jpg);
-    background-size: cover;
+    background-color: #f6e211;
+    background-repeat: no-repeat;
 }
 #robonix{
     background-image: url(../img/robonix.jpg);
-    background-size: cover;
+    background-color: #19dddc;
+    background-repeat: no-repeat;
 }
+#ani{
+    background-image: url(../img/fun_events.jpg);
+    background-repeat: no-repeat;
+    background-color: #691e63;
+}
+#cont{
+    background-image: url(../img/contact_us.png);
+    background-repeat: no-repeat;
+    background-color: #f1fa05;
+}
+#spon{
+    background-image: url(../img/sponsors.jpg);
+    background-repeat: no-repeat;
+    background-color: #19dddc;
+}
+#regi{
+    background-image: url(../img/Registration.jpg);
+    background-repeat: no-repeat;
+    background-color: #f73744;
+}
+/*#homm{
+    background-image: url(../img/avenir-logo-loading-animation.gif);
+    background-repeat: no-repeat;
+}*/
 .tpanel {
     height: 80vh;
     width: 50vw;
@@ -173,7 +181,7 @@ header:hover+nav-dropdown {
     background: rgba(255, 255, 255, 0.9);
 }
 .tpanel-head {
-    font-family: 'Limelight', cursive;
+    font-family: 'Righteous', cursive;
     padding: 3%;
     /*border-bottom: 3px solid #cdcdcd;*/
     font-size: 3rem;

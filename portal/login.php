@@ -1,3 +1,6 @@
+<?php
+include_once '../includes/app.php';
+if(!$logged) { ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,6 +48,14 @@
             <?php
             //exit();
     }
+    elseif(strpos($fullUrl,"err=2")==true){  ?>
+        <div class="alert alert-warning alert-dismissible">
+                <strong>Username/password is wrong</strong> 
+            </div>
+            <?php
+            //exit();
+    }
+
 
     elseif(strpos($fullUrl,"err=3")==true){ ?>
         <div class="alert alert-warning alert-dismissible">
@@ -78,6 +89,14 @@
             //exit();    
 
     }
+    elseif(strpos($fullUrl,"err=8")==true){  ?>
+        <div class="alert alert-warning alert-dismissible">
+                <strong>Login failed</strong> 
+            </div>
+            <?php
+            //exit();
+    }
+
 
 
    ?>
@@ -198,3 +217,7 @@
 
 </body>
 </html>
+<?php } else {
+	header("Location: dashboard");
+}
+?>
