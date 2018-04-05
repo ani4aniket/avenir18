@@ -9,26 +9,26 @@ if($logged) { ?>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 	 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="../assets/img/2102-min-tiny.png" type="image/png"/>
-  
+  <link rel="icon" href="assets/img/2102-min-tiny.png" type="image/png"/>
+
 </head>
 <body>
 <nav>
 <div class="avenlogo">
-    <img src="../assets/img/avenir (1).png" style="margin-top: 20px;">
+    <img src="assets/img/avenir (1).png" style="margin-top: 20px;">
   </div>
 </nav>
 <div id="wrapper">
         <div class="overlay"></div>
-    
+
         <!-- Sidebar -->
         <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                       <img src="../assets/img/avenir1.png">
+                       <img src="assets/img/avenir1.png">
                     </a>
                 </li>
                 <li>
@@ -74,7 +74,7 @@ if($logged) { ?>
           </figcaption>
           <div class="image"><img src="https://www.pixelstalk.net/wp-content/uploads/images1/Download-Desktop-Camera-Wallpaper-HD.jpg" width="440px" height="440px" alt="sample4"/></div>
           <div class="position"></div>
-        </figure> 
+        </figure>
         <ul class="chk">
           <li><div class="dropdown">
             <div class="dropbtn">ENCODING </div>
@@ -144,7 +144,7 @@ if($logged) { ?>
           </figcaption>
           <div class="image"><img src="https://www.pixelstalk.net/wp-content/uploads/images1/Download-Desktop-Camera-Wallpaper-HD.jpg" width="440px" height="440px" alt="sample4"/></div>
           <div class="position"></div>
-        </figure> 
+        </figure>
         <ul class="chk">
           <li><div class="dropdown">
             <div class="dropbtn">SPECTRUM </div>
@@ -256,7 +256,7 @@ if($logged) { ?>
           </figcaption>
           <div class="image"><img src="https://www.pixelstalk.net/wp-content/uploads/images1/Download-Desktop-Camera-Wallpaper-HD.jpg" width="440px" height="440px" alt="sample4"/></div>
           <div class="position"></div>
-        </figure> 
+        </figure>
         <ul class="chk">
           <li><div class="dropdown">
             <div class="dropbtn">FIFA 15</div>
@@ -326,7 +326,7 @@ if($logged) { ?>
           </figcaption>
           <div class="image"><img src="https://www.pixelstalk.net/wp-content/uploads/images1/Download-Desktop-Camera-Wallpaper-HD.jpg" width="440px" height="440px" alt="sample4"/></div>
           <div class="position"></div>
-        </figure> 
+        </figure>
         <ul class="chk">
           <li><div class="dropdown">
             <div class="dropbtn">TREASURE HUNT</div>
@@ -410,7 +410,7 @@ if($logged) { ?>
           </figcaption>
           <div class="image"><img src="https://www.pixelstalk.net/wp-content/uploads/images1/Download-Desktop-Camera-Wallpaper-HD.jpg" width="440px" height="440px" alt="sample4"/></div>
           <div class="position"></div>
-        </figure> 
+        </figure>
         <ul class="chk">
           <li><div class="dropdown">
             <div class="dropbtn">DISPUTE </div>
@@ -536,7 +536,7 @@ if($logged) { ?>
           </figcaption>
           <div class="image"><img src="https://www.pixelstalk.net/wp-content/uploads/images1/Download-Desktop-Camera-Wallpaper-HD.jpg" width="440px" height="440px" alt="sample4"/></div>
           <div class="position"></div>
-        </figure> 
+        </figure>
         <ul class="chk">
           <li><div class="dropdown">
             <div class="dropbtn">LINE TRACE</div>
@@ -620,7 +620,7 @@ if($logged) { ?>
           </figcaption>
           <div class="image"><img src="https://www.pixelstalk.net/wp-content/uploads/images1/Download-Desktop-Camera-Wallpaper-HD.jpg" width="440px" height="440px" alt="sample4"/></div>
           <div class="position"></div>
-        </figure> 
+        </figure>
         <ul class="chk">
           <li><div class="dropdown">
             <div class="dropbtn">BRIDGE O MANIA</div>
@@ -702,13 +702,13 @@ if($logged) { ?>
       </div>
     	</form>
         <!-- /#page-content-wrapper -->
-        
+
 </div>
-  
+
     <!-- Main library -->
-        
+
     <!-- /#wrapper -->
-    <script src="../assets/js/dash.js"></script>
+    <script src="assets/js/dash.js"></script>
 </body>
 </html>
 <?php } else {

@@ -9,7 +9,7 @@ if (isset($_POST['username'], $_POST['password'])) {
     $password = $_POST['password']; // The hashed password.
 
     if (login($username, $password, $mysqli) == true) {
-        
+
         //echo "login";
         // Login success
         $logged = 1;

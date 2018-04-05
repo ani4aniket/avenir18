@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule !.*\.php$ %{REQUEST_FILENAME}.php [QSA]
+
+RewriteRule    ^login?$    portal/login.php  [NC,L]
+RewriteRule    ^login.do?$    portal/login.do.php  [NC,L]
+RewriteRule    ^dashboard?$    portal/dashboard.php  [NC,L]
+RewriteRule    ^qr_gen?$    portal/generate_qr.php  [NC,L]
+RewriteRule    ^generate_qr.php?$    portal/generate_qr.php  [NC,L]
+RewriteRule    ^events?$    portal/events.php  [NC,L]

@@ -1,5 +1,10 @@
 <?php
 include_once 'includes/app.php';
+
+
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -189,7 +194,7 @@ include_once 'includes/app.php';
 		        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 		    </p>
 		</div>
-		
+
 		<div class="col-md-4">
 		    <h3>Our Location </h3>
 		    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.7490457344575!2d88.412595914334!3d22.47606294217284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02722b05a38e87%3A0x276c0d30e6be12ea!2sNetaji+Subhash+Engineering+College!5e0!3m2!1sen!2sin!4v1521961668479" sytle="" frameborder="0" style="border:0" allowfullscreen></iframe>

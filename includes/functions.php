@@ -125,7 +125,7 @@ function login_check($mysqli) {
 
         $table = "students";
 
-       
+
         // Get the user-agent string of the user.
         $user_browser = $_SERVER['HTTP_USER_AGENT'];
 

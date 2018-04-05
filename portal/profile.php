@@ -5,18 +5,18 @@
     <title>Profile</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../assets/css/profile.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/profile.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <link rel="icon" type="text/png" href="../assets/img/2102-min-tiny.png">
+    <link rel="icon" type="text/png" href="assets/img/2102-min-tiny.png">
 </head>
 <body>
 <nav>
     <div class="avenlogo">
-        <img src="../assets/img/avenir (1).png" style="margin-top: 20px;">
+        <img src="assets/img/avenir (1).png" style="margin-top: 20px;">
     </div>
     <div class="avenlogo">
-        <img src="../assets/img/nsec logo.png" style=" height: 75px;">
+        <img src="assets/img/nsec logo.png" style=" height: 75px;">
     </div>
 </nav>
 <div class="container" style="margin-top: 50px;">

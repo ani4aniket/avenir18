@@ -10,21 +10,21 @@ include_once '../includes/app.php';
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="../assets/css/events.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/events1.css">
-  <link rel="icon" href="../assets/img/2102-min-tiny.png" type="image/png"/>
-	
+	<link rel="stylesheet" type="text/css" href="assets/css/events.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/events1.css">
+  <link rel="icon" href="assets/img/2102-min-tiny.png" type="image/png"/>
+
 </head>
 <body>
 <div id="wrapper">
         <div class="overlay"></div>
-    
+
         <!-- Sidebar -->
         <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
             <ul class="nav sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                       <img src="../assets/img/avenir1.png">
+                       <img src="assets/img/avenir1.png">
                     </a>
                 </li>
                 <?php if(isset($_SESSION["username"])) { ?>
@@ -57,7 +57,7 @@ include_once '../includes/app.php';
                 </button>
         </div>
         <!-- /#page-content-wrapper -->
-        
+
 
 </div>
 
@@ -94,6 +94,6 @@ include_once '../includes/app.php';
 </section>
 
     <!-- /#wrapper -->
-    <script src="../assets/js/events.js"></script>
+    <script src="assets/js/events.js"></script>
 </body>
 </html>
